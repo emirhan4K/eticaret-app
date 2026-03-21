@@ -42,9 +42,10 @@ export const basketSlice = createSlice({
       state.drawer = !state.drawer;
     },
     calculateBasket: (state) => {
-      state.products &&
+      state.totalAmount = 0;
+      state.products && 
         state.products.map((product) => {
-          state.totalAmount += product.price;
+          state.totalAmount += product.price * product.count;
         });
     },
   },

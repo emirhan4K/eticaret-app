@@ -34,7 +34,7 @@ function App() {
           {products &&
             products.map((product) => {
               return (
-                <div>
+                <div key={product.id}>
                   <div className="flex-row" style={{ padding: "20px" }}>
                     <img
                       style={{ marginRight: "5px" }}
@@ -72,7 +72,7 @@ function App() {
               );
             })}
           <div>
-            <p style={{ textAlign: "center" }}>Toplam Tutar : {totalAmount}</p>
+            <p style={{ textAlign: "center", fontSize:"20px", fontWeight:"bold", color:"green" }}>Toplam Tutar : {totalAmount}</p>
           </div>
         </Drawer>
       </PageContainer>
