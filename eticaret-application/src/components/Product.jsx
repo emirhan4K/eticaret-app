@@ -1,24 +1,30 @@
-import React from 'react'
-import '../css/Product.css'
+import React from "react";
+import "../css/Product.css";
+import { useNavigate } from "react-router-dom";
 
-function Product({product}) {
+function Product({ product }) {
+  const { id, price, image, title, description } = product;
 
-    const {id, price , image , title ,description} = product;
+  const navigate = useNavigate();
 
   return (
-    <div className='card'>
-        <img className='image' src={image} alt="" />
-        <div>
-            <p>{title}</p>
-            <h3>{price} $</h3>
-        </div>
+    <div className="card">
+      <img className="image" src={image} alt="" />
+      <div>
+        <p>{title}</p>
+        <h3>{price} $</h3>
+      </div>
 
-        <div>
-            <button className='detail-button'>Detayına git</button>
-        </div>
-
+      <div>
+        <button
+          onClick={() => navigate("/product-details/" + id)}
+          className="detail-button"
+        >
+          Detayına git
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
