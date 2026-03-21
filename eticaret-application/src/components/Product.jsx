@@ -12,6 +12,11 @@ function Product({product}) {
             <p>{title}</p>
             <h3>{price} $</h3>
         </div>
+
+        <div>
+            <button className='detail-button'>Detayına git</button>
+        </div>
+
     </div>
   )
 }
