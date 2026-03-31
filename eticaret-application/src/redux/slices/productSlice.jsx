@@ -10,7 +10,7 @@ const initialState = {
 const BASE_URL = "https://fakestoreapi.com";
 
 export const getAllProducts = createAsyncThunk("getAllProducts", async () => { //Adresten ürünleri çek ve bana dön.
-  const response = await axios.get(`${BASE_URL}/products`);
+  const response = await axios.get(`${BASE_URL}/products`,{withCredentials : false});
   return response.data;
 });
 
